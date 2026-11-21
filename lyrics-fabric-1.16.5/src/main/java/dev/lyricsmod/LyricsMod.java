@@ -1,12 +1,12 @@
 package dev.lyricsmod;
 
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.minecraft.client.option.KeyBinding;
+import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
-import net.fabricmc.fabric.api.event.client.ClientTickEvents;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.options.KeyBinding;
+import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.text.LiteralText;
 import org.apache.logging.log4j.LogManager;
@@ -99,6 +99,9 @@ public class LyricsMod implements ClientModInitializer {
     private static void msg(MinecraftClient mc, String s) {
         if (mc.inGameHud != null) {
             mc.inGameHud.setOverlayMessage(new LiteralText(s), false);
+        }
+    }
+}
         }
     }
 }
