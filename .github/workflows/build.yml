@@ -15,9 +15,10 @@ jobs:
         with:
           gradle-version: 7.3.3
       - run: gradle build
+        working-directory: lyrics-fabric-1.16.5
       - uses: actions/upload-artifact@v4
         with:
           name: lyrics-fabric-jar
           path: |
-            build/libs/*.jar
-            !build/libs/*-sources.jar
+            lyrics-fabric-1.16.5/build/libs/*.jar
+            !lyrics-fabric-1.16.5/build/libs/*-sources.jar
